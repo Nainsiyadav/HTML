@@ -1,0 +1,85 @@
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;jQuery Effects Demo&lt;/title&gt;
+&lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+body{
+font-family: Arial;
+text-align: center;
+background-color: #f2f2f2;
+}
+h1{
+color: darkblue;
+}
+#box{
+width: 200px;
+height: 150px;
+background-color: tomato;
+color: white;
+font-size: 25px;
+line-height: 150px;
+margin: 30px auto;
+position: relative;
+}
+button{
+padding:10px 15px;
+margin:5px;
+font-size:16px;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;jQuery Effects&lt;/h1&gt;
+&lt;div id=&quot;box&quot;&gt;
+Hello
+&lt;/div&gt;
+&lt;button id=&quot;hide&quot;&gt;Hide&lt;/button&gt;
+&lt;button id=&quot;show&quot;&gt;Show&lt;/button&gt;
+&lt;button id=&quot;toggle&quot;&gt;Toggle&lt;/button&gt;
+&lt;button id=&quot;fade&quot;&gt;Fade&lt;/button&gt;
+&lt;button id=&quot;slide&quot;&gt;Slide&lt;/button&gt;
+&lt;button id=&quot;animate&quot;&gt;Animate&lt;/button&gt;
+&lt;script&gt;
+$(document).ready(function(){
+// Hide
+$(&quot;#hide&quot;).click(function(){
+$(&quot;#box&quot;).hide();
+});
+// Show
+$(&quot;#show&quot;).click(function(){
+$(&quot;#box&quot;).show();
+});
+// Toggle
+$(&quot;#toggle&quot;).click(function(){
+$(&quot;#box&quot;).toggle();
+});
+// Fade
+$(&quot;#fade&quot;).click(function(){
+$(&quot;#box&quot;).fadeToggle(1000);
+});
+// Slide
+$(&quot;#slide&quot;).click(function(){
+$(&quot;#box&quot;).slideToggle(1000);
+});
+
+// Animate
+$(&quot;#animate&quot;).click(function(){
+$(&quot;#box&quot;).show();
+$(&quot;#box&quot;)
+.animate({
+left:&quot;200px&quot;,
+width:&quot;250px&quot;,
+height:&quot;200px&quot;
+},1000)
+.animate({
+left:&quot;0px&quot;,
+width:&quot;200px&quot;,
+height:&quot;150px&quot;
+},1000);
+});
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
